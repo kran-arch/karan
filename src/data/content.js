@@ -40,7 +40,7 @@ const content = {
       "Algorithms",
       "ML fundamentals",
     ],
-    photo: "${import.meta.env.BASE_URL}profile.jpg",
+    photo: "/profile.jpg",
     photoAlt: "Portrait of Karan Khokhar",
   },
 
