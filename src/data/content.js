@@ -40,7 +40,7 @@ const content = {
       "Algorithms",
       "ML fundamentals",
     ],
-    photo: "/profile.jpg",
+    photo: "${import.meta.env.BASE_URL}profile.jpg",
     photoAlt: "Portrait of Karan Khokhar",
   },
 
@@ -53,7 +53,7 @@ const content = {
         name: "karankhokhar.com",
         description:
           "The source for this portfolio and its project-log system.",
-        url: "https://github.com/kran-arch",
+        url: "https://github.com/kran-arch/karan/",
         tech: "React · Vite · Material UI",
       },
       {
