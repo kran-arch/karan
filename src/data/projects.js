@@ -23,9 +23,9 @@ const projects = [
       { label: "Live demo", url: "#" },
     ],
     screenshots: [
-      { src: "/public/screenshots/portfolio1.jpg" },
-      { src: "/public/screenshots/portfolio2.jpg" },
-      { src: "/public/screenshots/portfolio3.jpg" },
+      { src: `${import.meta.env.BASE_URL}screenshots/portfolio1.jpg` },
+      { src: `${import.meta.env.BASE_URL}screenshots/portfolio2.jpg` },
+      { src: `${import.meta.env.BASE_URL}screenshots/portfolio3.jpg` },
     ],
     logs: [
       {

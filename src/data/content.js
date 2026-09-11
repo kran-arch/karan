@@ -40,7 +40,7 @@ const content = {
       "Algorithms",
       "ML fundamentals",
     ],
-    photo: "/profile.jpg",
+    photo: `${import.meta.env.BASE_URL}profile.jpg`,
     photoAlt: "Portrait of Karan Khokhar",
   },
 
@@ -70,7 +70,7 @@ const content = {
     email: "karankhokhar2021@gmail.com",
     github: "https://github.com/kran-arch",
     linkedin: "https://linkedin.com/in/karan-khokhar",
-    resume: "/resume.pdf",
+    resume: `${import.meta.env.BASE_URL}resume.pdf`,
     message:
       "I'm open to internships, collaborations, and just talking about interesting problems. My inbox is always open.",
   },
