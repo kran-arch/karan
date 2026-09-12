@@ -16,8 +16,6 @@ const projects = [
       "I needed one intentional home for my projects and growth as an AI/ML student—not a generic resume template.",
     approach:
       "I built reusable React components, kept personal content in data files, and designed a dark, project-focused interface that stays readable on every screen size.",
-    result:
-      "The site is both a public portfolio and a hands-on project for learning responsive design, routing, accessibility, and maintainable component architecture.",
     evidence: [
       { label: "GitHub source", url: "https://github.com/kran-arch" },
       { label: "Live demo", url: "#" },
@@ -57,50 +55,66 @@ const projects = [
   },
   {
     id: "P-02",
-    title: "Python ML & Algorithm Foundations",
+
+    title: "Python Learning Log",
+
     description:
-      "A growing collection of data-structure, algorithm, and machine-learning exercises that makes my learning visible and repeatable.",
-    tech: ["Python", "Algorithms", "AI / ML"],
+      "An evolving collection of practical Python projects and exercises that documents my progress from fundamental concepts to more advanced implementations.",
+
+    tech: ["Python", "Algorithms", "Git / GitHub"],
+
     link: "",
-    repo: "https://github.com/kran-arch",
+
+    repo: "https://github.com/kran-arch/python",
+
     role: "Solo project",
+
     timeframe: "2026",
+
     date: "2026 · ongoing",
+
     outcome:
-      "A project that really pushed me out of my comfort zone and made me focus on building a stronger understanding of algorithms and machine learning. Still working on em.",
+      "A structured record of my Python learning journey, showcasing practical implementations, improvements, and the concepts learned through each project.",
+
     problem:
-      "Early learning can feel scattered without a concrete place to apply and revisit core concepts.",
+      "Learning programming can become fragmented when concepts are studied without a consistent place to apply, test, and revisit them.",
+
     approach:
-      "I am collecting small implementations and experiments, then documenting what each one teaches me about problem-solving and machine learning.",
-    result:
-      "An evolving learning log that will grow with real implementations, benchmarks, and write-ups.",
+      "I learn by building small projects, starting with simple implementations and gradually improving them with better structure, additional features, and cleaner code.",
+
     evidence: [
-      { label: "GitHub profile", url: "https://github.com/kran-arch" },
+      {
+        label: "GitHub repository",
+        url: "https://github.com/kran-arch/python",
+      },
     ],
+
     screenshots: [],
-    logs: [
-      {
-        title: "0. the goal",
-        text: "Turn early AI and programming study into a repeatable hands-on practice instead of only reading about concepts.",
-      },
-      {
-        title: "1. the process",
-        text: "Each exercise begins with a small problem, then moves through an implementation, tests, and notes about what the result taught me.",
-      },
-      {
-        title: "2. current focus",
-        text: "Python fundamentals, data structures, algorithms, and introductory machine-learning workflows.",
-      },
-      {
-        title: "3. next milestone",
-        text: "Publish selected implementations with clean explanations, measurements, and links to their source code.",
-      },
-    ],
-    learned:
-      "I am learning to break larger AI/ML topics into smaller experiments that can be implemented, tested, and explained independently.",
-    improve:
-      "Next I will publish benchmark numbers, add tests to the strongest exercises, and turn the best experiments into standalone repositories.",
+   logs: [
+  {
+    title: "0. the goal",
+    text: "Build a consistent, hands-on learning process for programming and AI instead of relying only on theory and tutorials.",
   },
+  {
+    title: "1. the process",
+    text: "Start with a small problem, implement a solution, test it, and document what I learned from the process.",
+  },
+  {
+    title: "2. current focus",
+    text: "Strengthening Python fundamentals while exploring data structures, algorithms, and introductory machine-learning concepts.",
+  },
+  {
+    title: "3. next milestone",
+    text: "Publish selected projects with clear explanations, test results, useful measurements, and links to their source code.",
+  },
+],
+
+learned:
+  "I am learning to break complex programming and AI/ML concepts into smaller, manageable experiments that I can build, test, and understand independently.",
+
+improve:
+  "Next, I will add tests and performance measurements to my stronger projects and develop the most useful experiments into standalone repositories.",
+}
 ];
 
 export default projects;
