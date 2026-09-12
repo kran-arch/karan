@@ -45,26 +45,11 @@ const content = {
   },
 
   github: {
-    title: "Latest on GitHub",
-    description: "Some cool projects I've been working on.",
-    profile: "https://github.com/kran-arch",
-    repos: [
-      {
-        name: "karankhokhar.com",
-        description:
-          "The source for this portfolio and its project-log system.",
-        url: "https://github.com/kran-arch/karan/",
-        tech: "React · Vite · Material UI",
-      },
-      {
-        name: "AI / ML learning collection",
-        description:
-          "Algorithms, Python exercises, and introductory ML experiments as the collection grows.",
-        url: "https://github.com/kran-arch",
-        tech: "Python · Algorithms · AI / ML",
-      },
-    ],
-  },
+  username: "kran-arch",
+  title: "Latest on GitHub",
+  description: "A small, automatically updated selection of what I'm building.",
+  profile: "https://github.com/kran-arch",
+},
 
   contact: {
     email: "karankhokhar2021@gmail.com",
