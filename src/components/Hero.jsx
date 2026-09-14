@@ -14,6 +14,8 @@ export default function Hero() {
       component="img"
       src={about.photo}
       alt={about.photoAlt}
+      fetchPriority="high"
+      decoding="async"
       sx={{
         width: "100%",
         height: "100%",
@@ -116,16 +118,21 @@ export default function Hero() {
           </Typography>
         </FadeIn>
         <FadeIn delay={0.6}>
-          <Typography
-            sx={{
-              maxWidth: 540,
-              color: colors.slate,
-              mt: 3,
-              fontSize: "1.1rem",
-            }}
-          >
-            {hero.intro}
-          </Typography>
+          <Box sx={{ maxWidth: 540, mt: 3 }}>
+            <Typography sx={{ color: colors.slate, fontSize: "1.1rem" }}>
+              {hero.intro}
+            </Typography>
+            <Typography
+              sx={{
+                color: colors.green,
+                fontFamily: '"IBM Plex Mono", monospace',
+                fontSize: ".78rem",
+                mt: 2,
+              }}
+            >
+              {hero.availability}
+            </Typography>
+          </Box>
         </FadeIn>
         <FadeIn delay={0.9}>
           <Stack direction="row" sx={{ mt: 5 }}>

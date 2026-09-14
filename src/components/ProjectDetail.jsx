@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import {
   Box,
@@ -39,6 +40,26 @@ function MetaItem({ label, children }) {
 export default function ProjectDetail() {
   const { id } = useParams();
   const project = projects.find((item) => item.id === id);
+
+  useEffect(() => {
+    if (!project) return;
+
+    document.title = `${project.title} — Karan Khokhar`;
+    document
+      .querySelector('meta[name="description"]')
+      ?.setAttribute("content", project.description);
+
+    return () => {
+      document.title = "Karan Khokhar — AI & ML Student";
+      document
+        .querySelector('meta[name="description"]')
+        ?.setAttribute(
+          "content",
+          "Karan Khokhar — an AI and machine-learning student building useful things for the web.",
+        );
+    };
+  }, [project]);
+
   if (!project)
     return (
       <Container sx={{ py: 12 }}>
@@ -135,7 +156,10 @@ export default function ProjectDetail() {
             <Grid item xs={6} sm={3}>
               <MetaItem label="ROLE">{project.role}</MetaItem>
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={6} sm={3}>
+              <MetaItem label="STATUS">{project.status || "Building"}</MetaItem>
+            </Grid>
+            <Grid item xs={12} sm={3}>
               <Typography
                 sx={{
                   color: colors.green,
@@ -164,6 +188,57 @@ export default function ProjectDetail() {
           </Grid>
         </FadeIn>
 
+        <Grid container spacing={3} sx={{ mb: { xs: 7, md: 9 } }}>
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                height: "100%",
+                p: 3,
+                background: colors.lightNavy,
+                border: `1px solid ${colors.lightestNavy}`,
+              }}
+            >
+              <Typography
+                sx={{
+                  color: colors.green,
+                  fontFamily: '"IBM Plex Mono", monospace',
+                  fontSize: ".72rem",
+                  mb: 1,
+                }}
+              >
+                THE CHALLENGE
+              </Typography>
+              <Typography sx={{ color: colors.slate, lineHeight: 1.8 }}>
+                {project.problem}
+              </Typography>
+            </Box>
+          </Grid>
+          <Grid item xs={12} md={6}>
+            <Box
+              sx={{
+                height: "100%",
+                p: 3,
+                background: colors.lightNavy,
+                border: `1px solid ${colors.lightestNavy}`,
+              }}
+            >
+              <Typography
+                sx={{
+                  color: colors.green,
+                  fontFamily: '"IBM Plex Mono", monospace',
+                  fontSize: ".72rem",
+                  mb: 1,
+                }}
+              >
+                THE APPROACH
+              </Typography>
+              <Typography sx={{ color: colors.slate, lineHeight: 1.8 }}>
+                {project.approach}
+              </Typography>
+            </Box>
+          </Grid>
+        </Grid>
+
         <FadeIn>
           <Box
             sx={{
@@ -181,7 +256,7 @@ export default function ProjectDetail() {
                 mb: 1,
               }}
             >
-              MEASURABLE OUTCOME
+              RESULT
             </Typography>
             <Typography sx={{ color: colors.lightestSlate, lineHeight: 1.8 }}>
               {project.outcome}
@@ -308,54 +383,8 @@ export default function ProjectDetail() {
         <FadeIn>
           <Stack spacing={2} alignItems="flex-start">
             <Typography sx={{ color: colors.lightestSlate, fontWeight: 700 }}>
-              Project Previews
+              Screenshots and links
             </Typography>
-            <Stack direction="row" flexWrap="wrap" gap={1.5}>
-              {project.repo && (
-                <Button
-                  component="a"
-                  href={project.repo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  startIcon={<GitHubIcon />}
-                  variant="outlined"
-                  sx={{ color: colors.green, borderColor: colors.green }}
-                >
-                  GitHub source
-                </Button>
-              )}
-              {project.link && (
-                <Button
-                  component="a"
-                  href={project.link}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  startIcon={<OpenInNewIcon />}
-                  variant="outlined"
-                  sx={{ color: colors.green, borderColor: colors.green }}
-                >
-                  Live demo
-                </Button>
-              )}
-              {project.evidence
-                ?.filter(
-                  (item) =>
-                    item.url !== project.repo && item.url !== project.link,
-                )
-                .map((item) => (
-                  <Button
-                    key={item.url}
-                    component="a"
-                    href={item.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    variant="text"
-                    sx={{ color: colors.lightSlate }}
-                  >
-                    {item.label} ↗
-                  </Button>
-                ))}
-            </Stack>
             {project.screenshots?.length > 0 ? (
               <Grid container spacing={2}>
                 {project.screenshots.map((shot) => (
@@ -364,6 +393,7 @@ export default function ProjectDetail() {
                       component="img"
                       src={shot.src}
                       alt={shot.alt}
+                      loading="lazy"
                       sx={{
                         width: "100%",
                         display: "block",
@@ -381,6 +411,23 @@ export default function ProjectDetail() {
                 UI or result to capture.
               </Typography>
             )}
+            <Stack direction="row" flexWrap="wrap" gap={1.5}>
+              {project.repo && (
+                <Button component="a" href={project.repo} target="_blank" rel="noopener noreferrer" startIcon={<GitHubIcon />} variant="outlined" sx={{ color: colors.green, borderColor: colors.green }}>
+                  GitHub source
+                </Button>
+              )}
+              {project.link && (
+                <Button component="a" href={project.link} target="_blank" rel="noopener noreferrer" startIcon={<OpenInNewIcon />} variant="outlined" sx={{ color: colors.green, borderColor: colors.green }}>
+                  Live demo
+                </Button>
+              )}
+              {project.evidence?.filter((item) => item.url !== project.repo && item.url !== project.link).map((item) => (
+                <Button key={item.url} component="a" href={item.url} target="_blank" rel="noopener noreferrer" variant="text" sx={{ color: colors.lightSlate }}>
+                  {item.label} ↗
+                </Button>
+              ))}
+            </Stack>
           </Stack>
         </FadeIn>
 

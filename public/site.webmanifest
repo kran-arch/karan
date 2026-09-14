@@ -1,0 +1,15 @@
+{
+  "name": "Karan Khokhar — Portfolio",
+  "short_name": "Karan Khokhar",
+  "start_url": "/karan/",
+  "display": "standalone",
+  "background_color": "#0a192f",
+  "theme_color": "#0a192f",
+  "icons": [
+    {
+      "src": "/karan/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

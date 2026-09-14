@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -16,27 +17,33 @@ import content from "../data/content";
 
 const links = [
   { label: "About", href: "#about" },
-  { label: "Journey", href: "#experience" },
-  { label: "Skills", href: "#skills" },
-  { label: "Work", href: "#projects" },
+  { label: "Selected work", href: "#projects" },
   { label: "GitHub", href: "#github" },
   { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const navigate = useNavigate();
   const close = () => setOpen(false);
   const scrollToSection = (href) => {
-    document
+    const scroll = () => document
       .querySelector(href)
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
+    if (document.querySelector(href)) {
+      scroll();
+    } else {
+      navigate("/");
+      window.setTimeout(scroll, 0);
+    }
     close();
   };
   const linkButtons = () =>
     links.map((link, index) => (
       <Button
-        key={link.href}
-        onClick={() => scrollToSection(link.href)}
+        key={link.href || link.to}
+        {...(link.to ? { component: Link, to: link.to } : {})}
+        onClick={link.to ? close : () => scrollToSection(link.href)}
         sx={{
           color: colors.lightestSlate,
           fontFamily: '"IBM Plex Mono", monospace',
@@ -86,7 +93,7 @@ export default function Navbar() {
           <Stack
             direction="row"
             spacing={1}
-            sx={{ display: { xs: "none", sm: "flex" }, ml: "auto" }}
+            sx={{ display: { xs: "none", md: "flex" }, ml: "auto" }}
           >
             {linkButtons()}
           </Stack>
@@ -96,7 +103,7 @@ export default function Navbar() {
             rel="noopener noreferrer"
             variant="outlined"
             sx={{
-              display: { xs: "none", md: "inline-flex" },
+              display: { xs: "none", lg: "inline-flex" },
               ml: 2,
               color: colors.green,
               borderColor: colors.green,
@@ -111,7 +118,7 @@ export default function Navbar() {
           <Button
             href={`mailto:${content.contact.email}`}
             sx={{
-              display: { xs: "none", md: "inline-flex" },
+              display: { xs: "none", lg: "inline-flex" },
               ml: 1.5,
               color: colors.lightSlate,
             }}
@@ -122,7 +129,7 @@ export default function Navbar() {
             aria-label="Open navigation menu"
             onClick={() => setOpen(true)}
             sx={{
-              display: { xs: "inline-flex", sm: "none" },
+              display: { xs: "inline-flex", md: "none" },
               color: colors.green,
             }}
           >

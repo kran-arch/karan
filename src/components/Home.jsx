@@ -13,15 +13,20 @@ import Footer from './Footer'
 export default function Home() {
   return (
     <Box>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
       <Navbar />
-      <Hero />
-      <Now />
-      <About />
-      <Experience />
-      <Skills />
-      <Projects />
-      <GitHubHighlights />
-      <Contact />
+      <Box component="main" id="main-content">
+        <Hero />
+        <Now />
+        <About />
+        <Experience />
+        <Skills />
+        <Projects />
+        <GitHubHighlights />
+        <Contact />
+      </Box>
       <Footer />
     </Box>
   )

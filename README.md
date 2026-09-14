@@ -30,11 +30,15 @@ personal-info updates; nothing else needs to change.
 - `src/data/experience.js` — your work/internship history
 - `src/theme.js` — colors and fonts (change these and the whole site updates)
 
+The site serves `public/profile.avif` (a lightweight web version) for the
+portrait. The original source image lives at `src/assets/profile-original.jpg`
+and is intentionally excluded from the deployed site.
+
 ## Animations
 
 Each section wraps its content in `FadeIn` (`src/components/FadeIn.jsx`), which
-fades + slides content in every time it scrolls into view, and back out when it
-leaves — so it replays on every pass, not just once.
+fades and slides content in when it first enters the viewport. This gives each
+section a gentle introduction without replaying motion on every scroll.
 
 Every section sets its own animation independently via a `animation={{ ... }}`
 prop on `Section` (see `About.jsx`, `Experience.jsx`, `Skills.jsx`) or by using
@@ -52,3 +56,9 @@ Changing one section's animation never affects any other section.
 
 Run `npm run build`, which outputs a `dist/` folder you can host anywhere
 (GitHub Pages, Vercel, Netlify).
+
+This project is configured for GitHub Pages at
+`https://kran-arch.github.io/karan/`. The `base: '/karan/'` setting in
+`vite.config.js` is required for assets and routes to work from that repository
+path; change both the base and the URLs in `content.js`, `projects.js`, and
+`index.html` if the repository name changes.

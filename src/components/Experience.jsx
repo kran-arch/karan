@@ -8,8 +8,8 @@ export default function Experience() {
     // slightly slower + slides in further than About - independent of it
     <Section
       id="experience"
-      title="/Journey"
-      animation={{ direction: "right", duration: 0.7, distance: 32 }}
+      title="Experience"
+      animation={{ direction: "right", duration: 0.35, distance: 16 }}
     >
       <Stack spacing={4}>
         {experience.map((job) => (

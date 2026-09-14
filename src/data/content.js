@@ -1,63 +1,58 @@
-// ============================================================
-// EDIT THIS FILE to update your name, bio, links, Now section,
-// GitHub highlights, and resume path.
-// ============================================================
-
+// Edit this file to update personal details, copy, links, and site status.
 const content = {
   name: "Karan Khokhar",
   shortName: "KK",
-
+  siteUrl: "https://kran-arch.github.io/karan/",
+  site: { version: "v1.5", refined: "September 2026" },
   hero: {
-    greeting: "Hi, my name is",
-    tagline: "I’m learning to build intelligent experiences.",
-    intro:
-      "I’m a B.Tech student focused on Artificial Intelligence and Machine Learning. Right now, I’m strengthening my fundamentals through Python, algorithms, and thoughtful web projects.",
-    ctaLabel: "See what I’m building",
+    greeting: "Hello, I’m",
+    tagline: "An AI/ML student building practical software in public.",
+    intro: "I’m pursuing a B.Tech focused on Artificial Intelligence and Machine Learning. I’m currently strengthening my foundations through Python, algorithms, and considered web projects.",
+    availability: "Available for AI/ML and software internships.",
+    ctaLabel: "View selected work",
     ctaHref: "#projects",
   },
-
   now: {
-    eyebrow: "01. Now",
-    title: "What I’m building right now",
-    learning: "Python, algorithms, and machine-learning fundamentals",
-    project:
-      "Turning my learning into small, documented projects with measurable results",
-    milestone:
-      "Publish the next project with source code, preview, and a clear improvement plan",
+    eyebrow: "CURRENTLY",
+    title: "At a glance",
+    entries: [
+      { date: "CURRENTLY", title: "Learning", text: "Python, algorithms, and the fundamentals of machine learning through focused experiments." },
+      { date: "SEEKING", title: "Opportunity", text: "AI/ML and software internships where I can keep learning by contributing to real work." },
+      { date: "NEXT", title: "Publishing", text: "Projects with source code, previews, tests, and a clear plan for what to improve." },
+    ],
   },
-
+  lab: {
+    eyebrow: "// WORKBENCH",
+    title: "The Lab",
+    description: "A focused place for small experiments, notes, and work in progress. Ideas move from here into full project logs when they are ready.",
+  },
   about: {
     bio: [
-      "I enjoy the moment an idea becomes something people can use. My current focus is understanding the foundations behind AI and machine learning while becoming a stronger software builder.",
-      "I’m studying at CT Group of Institutions, Shahpur Campus, and I learn best by turning concepts into small, shippable experiments.",
-      "I just build, break, and rebuild until I understand the problem and the solution. I’m always looking for ways to improve my skills and grow as an aspiring developer.",
+      "I like the point where an idea turns into something people can use. My focus is learning the foundations of AI and machine learning while becoming a more capable software builder.",
+      "I study at CT Group of Institutions, Shahpur Campus, and learn most effectively by turning concepts into small projects that I can ship.",
+      "I build, break, and rebuild until I understand both the problem and its solution. I’m continually working to improve as an aspiring developer.",
     ],
-    tools: [
-      "Python",
-      "JavaScript",
-      "HTML & CSS",
-      "Git & GitHub",
-      "Algorithms",
-      "ML fundamentals",
-    ],
-    photo: `${import.meta.env.BASE_URL}profile.jpg`,
-    photoAlt: "Portrait of Karan Khokhar",
+    tools: ["Python", "JavaScript", "HTML & CSS", "Git & GitHub", "Algorithms", "ML fundamentals"],
+    education: {
+      program: "B.Tech in Artificial Intelligence & Machine Learning",
+      institution: "CT Group of Institutions, Shahpur Campus",
+      status: "Current student · learning through hands-on projects",
+    },
+    photo: `${import.meta.env.BASE_URL}profile.avif`,
+    photoAlt: "Karan Khokhar",
   },
-
   github: {
-  username: "kran-arch",
-  title: "Latest on GitHub",
-  description: "A small, automatically updated selection of what I'm building.",
-  profile: "https://github.com/kran-arch",
-},
-
+    username: "kran-arch",
+    title: "Recent GitHub activity",
+    description: "A live selection of the work I have been updating.",
+    profile: "https://github.com/kran-arch",
+  },
   contact: {
     email: "karankhokhar2021@gmail.com",
     github: "https://github.com/kran-arch",
     linkedin: "https://linkedin.com/in/karan-khokhar",
     resume: `${import.meta.env.BASE_URL}resume.pdf`,
-    message:
-      "I'm open to internships, collaborations, and just talking about interesting problems. My inbox is always open.",
+    message: "I’m open to internships, collaborations, and conversations about interesting problems. Feel free to reach out.",
   },
 };
 

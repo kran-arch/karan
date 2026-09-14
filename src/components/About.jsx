@@ -11,8 +11,8 @@ export default function About() {
     // touching Experience, Skills, or Projects
     <Section
       id="about"
-      title="/About Me"
-      animation={{ direction: "left", duration: 0.6, distance: 32 }}
+      title="About"
+      animation={{ direction: "left", duration: 0.35, distance: 16 }}
     >
       <Grid container spacing={4} alignItems="center">
         <Grid item xs={12} md={8}>
@@ -39,6 +39,31 @@ export default function About() {
               />
             ))}
           </Stack>
+          <Box
+            sx={{
+              mt: 4,
+              p: 2.5,
+              borderLeft: `2px solid ${colors.green}`,
+              backgroundColor: colors.lightNavy,
+            }}
+          >
+            <Typography
+              sx={{
+                color: colors.green,
+                fontFamily: '"IBM Plex Mono", monospace',
+                fontSize: ".72rem",
+                mb: 0.8,
+              }}
+            >
+              EDUCATION
+            </Typography>
+            <Typography sx={{ color: colors.white, fontWeight: 700, mb: 0.4 }}>
+              {about.education.program}
+            </Typography>
+            <Typography sx={{ color: colors.lightSlate, fontSize: ".95rem" }}>
+              {about.education.institution} · {about.education.status}
+            </Typography>
+          </Box>
         </Grid>
         <Grid item xs={12} md={4}>
           <Box
@@ -48,7 +73,6 @@ export default function About() {
               width: "100%",
               aspectRatio: "1",
               m: 0,
-              cursor: "pointer",
               transition: "transform 220ms ease, filter 220ms ease",
               "&::after": {
                 content: '""',
@@ -67,6 +91,8 @@ export default function About() {
               component="img"
               src={about.photo}
               alt={about.photoAlt}
+              loading="lazy"
+              decoding="async"
               sx={{
                 width: "100%",
                 height: "100%",

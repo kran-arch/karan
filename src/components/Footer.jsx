@@ -5,7 +5,7 @@ import { colors } from "../theme";
 import content from "../data/content";
 
 export default function Footer() {
-  const { contact } = content;
+  const { contact, site } = content;
 
   const iconSx = {
     color: colors.slate,
@@ -65,6 +65,31 @@ export default function Footer() {
         }}
       > 
         Built with hands. All rights reserved ©{" "} 
+      </Typography>
+      <Typography
+        sx={{
+          fontFamily: '"IBM Plex Mono", monospace',
+          fontSize: "0.72rem",
+          color: colors.slate,
+          mt: 1,
+        }}
+      >
+        Visual inspiration: {" "}
+        <Box
+          component="a"
+          href="https://www.gazijarin.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          sx={{ color: colors.green }}
+        >
+          Gazi Jarin
+        </Box>
+        {" "}· original implementation by Karan Khokhar
+      </Typography>
+      <Typography
+        sx={{ fontFamily: '"IBM Plex Mono", monospace', fontSize: ".68rem", color: colors.slate, mt: 1.5 }}
+      >
+        {site.version} · last updated {site.refined}
       </Typography>
 
     </Box>

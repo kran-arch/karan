@@ -43,7 +43,7 @@ export default function FadeIn({
     if (!node) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible(entry.isIntersecting),
+      ([entry]) => setVisible((wasVisible) => wasVisible || entry.isIntersecting),
       { threshold: 0.15 },
     );
 
@@ -54,6 +54,7 @@ export default function FadeIn({
   return (
     <Box
       ref={ref}
+      className="fade-in-content"
       sx={{
         opacity: visible ? 1 : 0,
         transform: visible

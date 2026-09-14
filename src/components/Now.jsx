@@ -3,13 +3,8 @@ import { colors } from "../theme";
 import FadeIn from "./FadeIn";
 import content from "../data/content";
 
-const items = [
-  ["LEARNING", content.now.learning],
-  ["CURRENT PROJECT", content.now.project],
-  ["NEXT MILESTONE", content.now.milestone],
-];
-
 export default function Now() {
+  const { now } = content;
   return (
     <Box id="now" sx={{ py: { xs: 5, md: 7 } }}>
       <Container maxWidth="lg">
@@ -29,21 +24,22 @@ export default function Now() {
                 mb: 1,
               }}
             >
-              {content.now.eyebrow}
+              {now.eyebrow}
             </Typography>
             <Typography
               variant="h3"
+              component="h2"
               sx={{
                 color: colors.white,
                 fontSize: { xs: "1.5rem", md: "2rem" },
                 mb: 3,
               }}
             >
-              {content.now.title}
+              {now.title}
             </Typography>
             <Grid container spacing={3}>
-              {items.map(([label, text]) => (
-                <Grid item xs={12} md={4} key={label}>
+              {now.entries.map((entry) => (
+                <Grid item xs={12} md={4} key={entry.title}>
                   <Typography
                     sx={{
                       color: colors.green,
@@ -52,12 +48,15 @@ export default function Now() {
                       mb: 0.8,
                     }}
                   >
-                    {label}
+                    {entry.date}
+                  </Typography>
+                  <Typography sx={{ color: colors.white, fontWeight: 700, mb: 1 }}>
+                    {entry.title}
                   </Typography>
                   <Typography
                     sx={{ color: colors.lightSlate, lineHeight: 1.75 }}
                   >
-                    {text}
+                    {entry.text}
                   </Typography>
                 </Grid>
               ))}
