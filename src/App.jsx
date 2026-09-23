@@ -7,8 +7,9 @@ const Lab = lazy(() => import('./components/Lab'))
 const NotFound = lazy(() => import('./components/NotFound'))
 
 function ScrollToTop() {
-  const { pathname } = useLocation()
+  const { pathname, state } = useLocation()
   useEffect(() => {
+    if (state?.scrollTarget) return
     window.scrollTo(0, 0)
   }, [pathname])
   return null

@@ -9,7 +9,6 @@ export default function Projects() {
       id="projects"
       eyebrow="SELECTED WORK"
       title="Projects"
-      animation={{ duration: 0.35, distance: 12 }}
     >
       <Grid container spacing={3}>
         {projects.map((project, index) => (

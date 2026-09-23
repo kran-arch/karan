@@ -19,9 +19,8 @@ function getOffset(direction, distance) {
   }
 }
 
-// Wraps children and animates them in every time they enter the viewport,
-// and back out when they leave - so it replays on every scroll pass, and
-// every time you navigate back to a page that contains it.
+// Reveals children on entry and resets them after they leave the viewport,
+// so each later visit plays the animation again.
 //
 // Props (all optional, each section sets its own combination in isolation):
 //   direction - 'up' | 'down' | 'left' | 'right' | 'scale'   (default 'up')
@@ -31,20 +30,21 @@ function getOffset(direction, distance) {
 export default function FadeIn({
   children,
   direction = "up",
-  distance = 24,
-  duration = 0.6,
+  distance = 16,
+  duration = 0.72,
   delay = 0,
 }) {
   const ref = useRef(null);
   const [visible, setVisible] = useState(false);
+  const easing = "cubic-bezier(0.22, 1, 0.36, 1)";
 
   useEffect(() => {
     const node = ref.current;
     if (!node) return;
 
     const observer = new IntersectionObserver(
-      ([entry]) => setVisible((wasVisible) => wasVisible || entry.isIntersecting),
-      { threshold: 0.15 },
+      ([entry]) => setVisible(entry.isIntersecting),
+      { threshold: 0.05 },
     );
 
     observer.observe(node);
@@ -60,7 +60,7 @@ export default function FadeIn({
         transform: visible
           ? "translate(0) scale(1)"
           : getOffset(direction, distance),
-        transition: `opacity ${duration}s ease ${delay}s, transform ${duration}s ease ${delay}s`,
+        transition: `opacity ${duration}s ${easing} ${visible ? delay : 0}s, transform ${duration}s ${easing} ${visible ? delay : 0}s`,
       }}
     >
       {children}

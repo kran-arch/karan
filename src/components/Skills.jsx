@@ -8,7 +8,6 @@ export default function Skills() {
     <Section
       id="skills"
       title="Skills"
-      animation={{ duration: 0.35, distance: 12 }}
     >
       <Grid container spacing={2}>
         {skills.map((skill) => (

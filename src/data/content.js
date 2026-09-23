@@ -12,25 +12,21 @@ const content = {
     ctaLabel: "View selected work",
     ctaHref: "#projects",
   },
-  now: {
-    eyebrow: "CURRENTLY",
-    title: "At a glance",
-    entries: [
-      { date: "CURRENTLY", title: "Learning", text: "Python, algorithms, and the fundamentals of machine learning through focused experiments." },
-      { date: "SEEKING", title: "Opportunity", text: "AI/ML and software internships where I can keep learning by contributing to real work." },
-      { date: "NEXT", title: "Publishing", text: "Projects with source code, previews, tests, and a clear plan for what to improve." },
-    ],
-  },
   lab: {
     eyebrow: "// WORKBENCH",
     title: "The Lab",
     description: "A focused place for small experiments, notes, and work in progress. Ideas move from here into full project logs when they are ready.",
+    // Add or rename a status here, then give projects that status in projects.js.
+    categories: [
+      { id: "progress", label: "In progress", statuses: ["building", "in-work"], empty: "Work in progress will show up here." },
+      { id: "completed", label: "Completed", statuses: ["completed", "complete", "shipped"], empty: "Finished work will appear here as it is ready to share." },
+      { id: "ideas", label: "Ideas", statuses: ["idea", "planned", "queued", "up next"], empty: "A place for experiments and ideas I want to explore next." },
+    ],
   },
   about: {
     bio: [
-      "I like the point where an idea turns into something people can use. My focus is learning the foundations of AI and machine learning while becoming a more capable software builder.",
-      "I study at CT Group of Institutions, Shahpur Campus, and learn most effectively by turning concepts into small projects that I can ship.",
-      "I build, break, and rebuild until I understand both the problem and its solution. I’m continually working to improve as an aspiring developer.",
+      "I’m an AI/ML student at CT Group of Institutions, Shahpur Campus. I learn by turning ideas into small, useful projects.",
+      "I’m building strong foundations in Python, algorithms, and machine learning, and looking for opportunities to contribute to real software work.",
     ],
     tools: ["Python", "JavaScript", "HTML & CSS", "Git & GitHub", "Algorithms", "ML fundamentals"],
     education: {
@@ -40,12 +36,6 @@ const content = {
     },
     photo: `${import.meta.env.BASE_URL}profile.avif`,
     photoAlt: "Karan Khokhar",
-  },
-  github: {
-    username: "kran-arch",
-    title: "Recent GitHub activity",
-    description: "A live selection of the work I have been updating.",
-    profile: "https://github.com/kran-arch",
   },
   contact: {
     email: "karankhokhar2021@gmail.com",

@@ -1,59 +1,19 @@
-<div align="center">
+# Karan Khokhar · Portfolio
 
-# Karan Khokhar — Portfolio
+A lightweight, responsive portfolio for my AI/ML studies, projects, and experiments.
 
-### An AI/ML student portfolio built to document practical work, learning, and growth in public.
+**Live site:** [kran-arch.github.io/karan](https://kran-arch.github.io/karan/)
 
-[![Live site](https://img.shields.io/badge/Live%20site-64ffda?style=for-the-badge&logo=githubpages&logoColor=0a192f)](https://kran-arch.github.io/karan/)
-[![React](https://img.shields.io/badge/React-19-61dafb?style=for-the-badge&logo=react&logoColor=0a192f)](https://react.dev/)
-[![Vite](https://img.shields.io/badge/Vite-6-646cff?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
-[![Material UI](https://img.shields.io/badge/Material%20UI-6-007fff?style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/)
+The visual direction takes inspiration from [Gazi Jarin’s portfolio](https://www.gazijarin.com/). The content and implementation are my own.
 
-[Explore the live site](https://kran-arch.github.io/karan/) · [Report an issue](https://github.com/kran-arch/karan/issues)
+## What’s here
 
-</div>
-
-<br />
-
-## Overview
-
-This is my personal portfolio: a focused place for selected work, documented learning, and project case studies. It is designed to be simple to navigate, easy to maintain, and accessible across screen sizes.
-
-The visual direction was influenced by [Gazi Jarin’s portfolio](https://www.gazijarin.com/), while the implementation, content structure, and project presentation are original.
-
-## Preview
-
-<div align="center">
-  <img src="public/screenshots/portfolio1.jpg" alt="Portfolio homepage" width="80%" />
-</div>
-
-<br />
-
-<div align="center">
-  <img src="public/screenshots/portfolio2.jpg" alt="Selected work and skills sections" width="48%" />
-  <img src="public/screenshots/portfolio3.jpg" alt="Project case-study page" width="48%" />
-</div>
-
-## What’s inside
-
-| Area | Purpose |
-| --- | --- |
-| **Direct introduction** | Communicates my AI/ML focus and internship availability quickly. |
-| **At-a-glance status** | Shares what I’m learning, seeking, and publishing next. |
-| **Selected work** | Highlights projects with status, stack, outcome, and next step. |
-| **Project case studies** | Shows the challenge, approach, result, build log, screenshots, and links. |
-| **GitHub activity** | Fetches recent public repositories, with a local project fallback if the API is unavailable. |
-| **Accessible experience** | Includes semantic headings, keyboard skip navigation, reduced-motion support, and responsive layouts. |
-| **GitHub Pages ready** | Configured for static deployment at `/karan/`. |
-
-## Tech stack
-
-```text
-React 19       UI and routing
-Vite 6         Development server and production build
-Material UI 6  Components and responsive styling
-GitHub Pages   Static hosting
-```
+- A short introduction, profile, and contact links
+- Experience entries selected from a tabbed panel
+- A concise skills section
+- Project cards with individual project pages and build notes
+- A Lab with status tabs for work in progress, completed work, and ideas
+- Responsive navigation, reduced-motion support, and a skip-to-content link
 
 ## Run locally
 
@@ -64,58 +24,43 @@ npm install
 npm run dev
 ```
 
-Open the local URL Vite prints in your terminal.
+Vite prints the local development URL in the terminal.
 
-## Available commands
-
-| Command | Description |
+| Command | What it does |
 | --- | --- |
-| `npm run dev` | Start the local development server. |
-| `npm run build` | Create an optimized production build in `dist/`. |
-| `npm run preview` | Preview the production build locally. |
+| `npm run dev` | Starts the development server. |
+| `npm run build` | Builds the static site into `dist/`. |
+| `npm run preview` | Serves the production build locally. |
 
-## Updating the portfolio
+## Update the content
 
-Most content is deliberately separated from layout code.
+Most portfolio copy and records live in `src/data/`, separate from the page layout.
 
-| File | Update here |
+| File | Change |
 | --- | --- |
-| [`src/data/content.js`](src/data/content.js) | Name, bio, status strip, social links, contact details, and site copy. |
-| [`src/data/projects.js`](src/data/projects.js) | Project cards and their full case studies. |
-| [`src/data/skills.js`](src/data/skills.js) | Skills and supporting context. |
-| [`src/data/experience.js`](src/data/experience.js) | Education and experience timeline. |
-| [`src/theme.js`](src/theme.js) | Color palette and typography tokens. |
+| [`content.js`](src/data/content.js) | Intro, bio, contact details, and Lab category labels and empty states. |
+| [`experience.js`](src/data/experience.js) | Experience tabs and the role, dates, and notes shown in each panel. |
+| [`skills.js`](src/data/skills.js) | Skills and their descriptions. |
+| [`projects.js`](src/data/projects.js) | Project cards, detail pages, links, screenshots, and status. |
 
-The served portrait is [`public/profile.avif`](public/profile.avif). Its original source is retained outside the deployed public directory at [`src/assets/profile-original.jpg`](src/assets/profile-original.jpg).
+To add a project, add an entry to `projects.js`. Set its `status` to one of the statuses listed in `content.js` under `lab.categories` to place it in the matching Lab tab. To add a new Lab tab, add a category there with its label, statuses, and empty-state message.
 
-## Deployment
+To add an Experience tab or Skill card, add an entry to its matching data file. The existing sections render those entries automatically.
 
-The site is configured for GitHub Pages:
+## Build and hosting
 
-```js
-// vite.config.js
-base: "/karan/"
-```
-
-After building, deploy the `dist/` directory through your GitHub Pages workflow or hosting provider. If the repository name changes, update:
-
-- `base` in [`vite.config.js`](vite.config.js)
-- `siteUrl` in [`src/data/content.js`](src/data/content.js)
-- GitHub Pages URLs in [`src/data/projects.js`](src/data/projects.js) and [`index.html`](index.html)
-
-## Quality checks
+The site uses HashRouter and Vite’s `/karan/` base path for GitHub Pages deployment. To build the static files:
 
 ```bash
 npm run build
-npm ci --dry-run --ignore-scripts
 ```
 
-## License
+The generated site is in `dist/`. If the repository is renamed, update `base` in `vite.config.js` and the deployed URLs in `index.html` and project data.
 
-This repository is intended as a personal portfolio. Please do not reuse its personal content, images, or résumé.
+## Built with
 
-<div align="center">
+React · Vite · Material UI · React Router
 
-Built by [Karan Khokhar](https://github.com/kran-arch) · Inspired by [Gazi Jarin](https://www.gazijarin.com/)
+---
 
-</div>
+Made by [Karan Khokhar](https://github.com/kran-arch).

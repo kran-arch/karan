@@ -27,7 +27,7 @@ export default function Contact() {
               mb: 1,
             }}
           >
-            07. What&apos;s Next?
+            What&apos;s Next?
           </Typography>
           <Typography
             variant="h2"
@@ -37,6 +37,7 @@ export default function Contact() {
               mb: 2,
             }}
           >
+            <Box component="span" aria-hidden="true" sx={{ color: colors.green, fontWeight: 800, mr: 1.25 }}>/</Box>
             Get In Touch
           </Typography>
           <Typography sx={{ color: colors.slate, mb: 5 }}>

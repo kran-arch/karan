@@ -17,8 +17,9 @@ export default function Section({ id, title, eyebrow, children, animation = {} }
               <Typography
                 variant="h3"
                 component="h2"
-                sx={{ fontSize: { xs: "1.6rem", md: "2rem" }, color: colors.white, whiteSpace: "nowrap" }}
+                sx={{ fontSize: { xs: "1.6rem", md: "2rem" }, color: colors.white, whiteSpace: "nowrap", fontWeight: 700 }}
               >
+                <Box component="span" aria-hidden="true" sx={{ color: colors.green, fontWeight: 800, mr: 1.25 }}>/</Box>
                 {title}
               </Typography>
             </Box>

@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import {
   AppBar,
   Toolbar,
@@ -17,15 +17,26 @@ import content from "../data/content";
 
 const links = [
   { label: "About", href: "#about" },
+  { label: "Experience", href: "#experience" },
+  { label: "Skills", href: "#skills" },
   { label: "Selected work", href: "#projects" },
-  { label: "GitHub", href: "#github" },
+  { label: "Lab", href: "#lab" },
   { label: "Contact", href: "#contact" },
 ];
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
+  const location = useLocation();
   const close = () => setOpen(false);
+  useEffect(() => {
+    const target = location.state?.scrollTarget;
+    if (location.pathname !== "/" || !target) return;
+    requestAnimationFrame(() => {
+      document.querySelector(target)?.scrollIntoView({ behavior: "smooth", block: "start" });
+      navigate("/", { replace: true, state: null });
+    });
+  }, [location.pathname, location.state, navigate]);
   const scrollToSection = (href) => {
     const scroll = () => document
       .querySelector(href)
@@ -33,13 +44,12 @@ export default function Navbar() {
     if (document.querySelector(href)) {
       scroll();
     } else {
-      navigate("/");
-      window.setTimeout(scroll, 0);
+      navigate("/", { state: { scrollTarget: href } });
     }
     close();
   };
   const linkButtons = () =>
-    links.map((link, index) => (
+    links.map((link) => (
       <Button
         key={link.href || link.to}
         {...(link.to ? { component: Link, to: link.to } : {})}
@@ -50,9 +60,6 @@ export default function Navbar() {
           "&:hover": { color: colors.green },
         }}
       >
-        <span className="section-number">
-          {String(index + 1).padStart(2, "0")}.
-        </span>
         {link.label}
       </Button>
     ));
@@ -115,16 +122,6 @@ export default function Navbar() {
           >
             Resume
           </Button>
-          <Button
-            href={`mailto:${content.contact.email}`}
-            sx={{
-              display: { xs: "none", lg: "inline-flex" },
-              ml: 1.5,
-              color: colors.lightSlate,
-            }}
-          >
-            Say hello
-          </Button>
           <IconButton
             aria-label="Open navigation menu"
             onClick={() => setOpen(true)}
@@ -161,12 +158,6 @@ export default function Navbar() {
               sx={{ color: colors.green, borderColor: colors.green }}
             >
               Resume
-            </Button>
-            <Button
-              href={`mailto:${content.contact.email}`}
-              sx={{ color: colors.lightSlate }}
-            >
-              Say hello
             </Button>
           </Stack>
         </Box>

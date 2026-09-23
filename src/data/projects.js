@@ -1,4 +1,4 @@
-// Each project object becomes one card on the homepage AND one full detail page.
+// Add projects here. Their status selects a Lab category configured in content.js.
 const projects = [
   {
     id: "P-01",
@@ -9,7 +9,7 @@ const projects = [
     link: "https://kran-arch.github.io/karan/",
     repo: "https://github.com/kran-arch/karan",
     role: "Designer & developer",
-    status: "Shipped",
+    status: "In-Work",
     lastUpdated: "2026",
     next: "Keep the project logs up to date as new work is released.",
     timeframe: "2026",
