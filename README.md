@@ -6,7 +6,6 @@
 [![React](https://img.shields.io/badge/React%2019-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://react.dev/)
 [![Vite](https://img.shields.io/badge/Vite%206-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Material UI](https://img.shields.io/badge/MUI%20v6-007FFF?style=for-the-badge&logo=mui&logoColor=white)](https://mui.com/)
-[![License](https://img.shields.io/badge/License-MIT-0a192f?style=for-the-badge&labelColor=112240&color=64ffda)](LICENSE)
 
 <p align="center">
   <b>A minimalist, high-performance developer portfolio and experimental workbench.</b><br />
