@@ -26,15 +26,15 @@ const projects = [
     ],
     screenshots: [
       {
-        src: `${import.meta.env.BASE_URL}screenshots/portfolio1.jpg`,
+        src: `${import.meta.env.BASE_URL}/screenshots/portfolio1.jpg`,
         alt: "Portfolio homepage hero and navigation",
       },
       {
-        src: `${import.meta.env.BASE_URL}screenshots/portfolio2.jpg`,
+        src: `${import.meta.env.BASE_URL}/screenshots/portfolio2.jpg`,
         alt: "Portfolio project cards and skills section",
       },
       {
-        src: `${import.meta.env.BASE_URL}screenshots/portfolio3.jpg`,
+        src: `${import.meta.env.BASE_URL}/screenshots/portfolio3.jpg`,
         alt: "Portfolio project log detail page",
       },
     ],
