@@ -1,10 +1,10 @@
 import { lazy, Suspense, useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
-import Home from './components/Home'
-import SocialRail from './components/SocialRail'
-const ProjectDetail = lazy(() => import('./components/ProjectDetail'))
-const Lab = lazy(() => import('./components/Lab'))
-const NotFound = lazy(() => import('./components/NotFound'))
+import Home from './pages/Home'
+import SocialRail from './components/layout/SocialRail'
+const ProjectDetail = lazy(() => import('./pages/ProjectDetail'))
+const Lab = lazy(() => import('./pages/Lab'))
+const NotFound = lazy(() => import('./pages/NotFound'))
 
 function ScrollToTop() {
   const { pathname, state } = useLocation()

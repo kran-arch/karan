@@ -4,6 +4,7 @@ import { createTheme } from "@mui/material/styles";
 // so the whole site's palette can be changed in one place.
 export const colors = {
   navy: "#0a192f",
+  darkNavy: "#020c1b",
   lightNavy: "#112240",
   lightestNavy: "#233554",
   slate: "#8892b0",
@@ -30,7 +31,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: '"Sora", sans-serif',
+    fontFamily: '"Sora", -apple-system, BlinkMacSystemFont, sans-serif',
     h1: { fontWeight: 800, letterSpacing: "-0.02em" },
     h2: { fontWeight: 700, letterSpacing: "-0.01em" },
     h3: { fontWeight: 700 },
@@ -42,6 +43,7 @@ const theme = createTheme({
         root: {
           borderRadius: 4,
           fontFamily: '"IBM Plex Mono", monospace',
+          textTransform: "none",
         },
       },
     },
@@ -50,6 +52,21 @@ const theme = createTheme({
         root: {
           fontFamily: '"IBM Plex Mono", monospace',
           fontSize: "0.8rem",
+          borderRadius: 4,
+        },
+      },
+    },
+    MuiCard: {
+      styleOverrides: {
+        root: {
+          backgroundColor: colors.lightNavy,
+          borderRadius: 6,
+          border: `1px solid ${colors.lightestNavy}`,
+          transition: "transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease",
+          "&:hover": {
+            borderColor: "rgba(100, 255, 218, 0.4)",
+            boxShadow: "0 10px 30px -15px rgba(2, 12, 27, 0.7)",
+          },
         },
       },
     },

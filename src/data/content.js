@@ -3,12 +3,13 @@ const content = {
   name: "Karan Khokhar",
   shortName: "KK",
   siteUrl: "https://kran-arch.github.io/karan/",
-  site: { version: "v1.5", refined: "September 2026" },
+  site: { version: "v1.5", refined: "October 2026" },
   hero: {
     greeting: "Hello, I’m",
-    tagline: "An AI/ML student building practical software in public.",
-    intro: "I’m pursuing a B.Tech focused on Artificial Intelligence and Machine Learning. I’m currently strengthening my foundations through Python, algorithms, and considered web projects.",
-    availability: "Available for AI/ML and software internships.",
+    tagline: "AI/ML undergrad building software at the intersection of machine learning systems and practical web tools.",
+    intro: "I study AI & Machine Learning at CT Group. Rather than just collecting theory, I learn by building: implementing core algorithms, experimenting with models, and shipping clean software in public.",
+    availability: "Available for AI/ML and software internships",
+    exploring: "PyTorch internals, neural architectures & algorithms",
     ctaLabel: "View selected work",
     ctaHref: "#projects",
   },
@@ -25,8 +26,8 @@ const content = {
   },
   about: {
     bio: [
-      "I’m an AI/ML student at CT Group of Institutions, Shahpur Campus. I learn by turning ideas into small, useful projects.",
-      "I’m building strong foundations in Python, algorithms, and machine learning, and looking for opportunities to contribute to real software work.",
+      "I’m an AI/ML student at CT Group of Institutions. My focus is understanding machine learning and computing systems from the ground up—from mathematical intuition to scalable software.",
+      "Rather than relying only on tutorials, I learn by building: implementing algorithms in Python, testing architectures, and documenting what breaks along the way.",
     ],
     tools: ["Python", "JavaScript", "HTML & CSS", "Git & GitHub", "Algorithms", "ML fundamentals"],
     education: {
